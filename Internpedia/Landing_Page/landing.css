@@ -1,0 +1,93 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a3d;
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #2a2a5d;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #1a1a3d;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-buttons .primary-btn {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.cta-buttons .secondary-btn {
+    background-color: transparent;
+    border: 2px solid #4caf50;
+    color: #4caf50;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #2a2a5d;
+}
+
+.feature {
+    max-width: 30%;
+    text-align: center;
+}
+
+.testimonials {
+    padding: 50px;
+    background-color: #1a1a3d;
+    text-align: center;
+}
+
+.testimonials .testimonial {
+    margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2a2a5d;
+}

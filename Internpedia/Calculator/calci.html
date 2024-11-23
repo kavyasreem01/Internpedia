@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="calci.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen" id="screen">0</div>
+        <div class="buttons">
+            <button class="btn" onclick="appendValue('7')">7</button>
+            <button class="btn" onclick="appendValue('8')">8</button>
+            <button class="btn" onclick="appendValue('9')">9</button>
+            <button class="btn operator" onclick="setOperator('/')">÷</button>
+
+            <button class="btn" onclick="appendValue('4')">4</button>
+            <button class="btn" onclick="appendValue('5')">5</button>
+            <button class="btn" onclick="appendValue('6')">6</button>
+            <button class="btn operator" onclick="setOperator('*')">×</button>
+
+            <button class="btn" onclick="appendValue('1')">1</button>
+            <button class="btn" onclick="appendValue('2')">2</button>
+            <button class="btn" onclick="appendValue('3')">3</button>
+            <button class="btn operator" onclick="setOperator('-')">−</button>
+
+            <button class="btn" onclick="appendValue('0')">0</button>
+            <button class="btn" onclick="appendValue('.')">.</button>
+            <button class="btn operator" onclick="calculate()">=</button>
+            <button class="btn operator" onclick="setOperator('+')">+</button>
+
+            <button class="btn clear" onclick="clearScreen()">C</button>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = ""; // Store the current input value
+        let previousInput = ""; // Store the previous value before operation
+        let operator = "";      // Store the current operator
+
+        const screen = document.getElementById("screen");
+
+        // Function to update the screen
+        function updateScreen(value) {
+            screen.textContent = value;
+        }
+
+        // Function to append a number or dot to the current input
+        function appendValue(value) {
+            currentInput += value;
+            updateScreen(currentInput);
+        }
+
+        // Function to set the operator
+        function setOperator(op) {
+            if (currentInput !== "") {
+                if (previousInput !== "") {
+                    calculate();
+                }
+                operator = op;
+                previousInput = currentInput;
+                currentInput = "";
+                updateScreen(`${previousInput} ${operator}`);
+            }
+        }
+
+        // Function to perform the calculation
+        function calculate() {
+            let result = 0;
+            const num1 = parseFloat(previousInput);
+            const num2 = parseFloat(currentInput);
+
+            if (operator === "+") result = num1 + num2;
+            else if (operator === "-") result = num1 - num2;
+            else if (operator === "*") result = num1 * num2;
+            else if (operator === "/") result = num2 !== 0 ? num1 / num2 : "Error";
+
+            currentInput = result.toString();
+            operator = "";
+            previousInput = "";
+            updateScreen(currentInput);
+        }
+
+        // Function to clear the screen and reset values
+        function clearScreen() {
+            currentInput = "";
+            previousInput = "";
+            operator = "";
+            updateScreen("0");
+        }
+    </script>
+</body>
+</html>
