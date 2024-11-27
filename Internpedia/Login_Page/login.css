@@ -1,13 +1,11 @@
-/* Basic reset for margin and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Set background gradient with shades */
 body {
-    background: linear-gradient(135deg, #e2b27c, #850232); /* Pink and Orange gradient */
+    background: linear-gradient(135deg, #e2b27c, #850232);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -53,7 +51,7 @@ h2 {
 }
 
 .textbox input:focus {
-    border-color: #f5ddc1; /* Change border color on focus */
+    border-color: #f5ddc1; 
 }
 
 .button-container button {
@@ -69,7 +67,7 @@ h2 {
 }
 
 .button-container button:hover {
-    background-color: #e52e71; /* Change button color on hover */
+    background-color: #e52e71;
 }
 
 .forgot-password {
