@@ -40,19 +40,16 @@
         let operator = "";      // Store the current operator
 
         const screen = document.getElementById("screen");
-
-        // Function to update the screen
+        
         function updateScreen(value) {
             screen.textContent = value;
         }
-
-        // Function to append a number or dot to the current input
         function appendValue(value) {
             currentInput += value;
             updateScreen(currentInput);
         }
 
-        // Function to set the operator
+        //set the operator
         function setOperator(op) {
             if (currentInput !== "") {
                 if (previousInput !== "") {
@@ -65,7 +62,7 @@
             }
         }
 
-        // Function to perform the calculation
+  
         function calculate() {
             let result = 0;
             const num1 = parseFloat(previousInput);
@@ -82,7 +79,7 @@
             updateScreen(currentInput);
         }
 
-        // Function to clear the screen and reset values
+        // reset values
         function clearScreen() {
             currentInput = "";
             previousInput = "";
